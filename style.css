@@ -1,0 +1,532 @@
+/* ========== GENERAL ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f7fb;
+  color: #333;
+}
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+h2 {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 2rem;
+}
+/* Typewriter Effect */
+.typewriter {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1px solid #f7de04;
+  width: fit-content; /* Adjust based on length of your name */
+  animation: typing 3s steps(19, end) forwards, blink-caret 0.7s step-end infinite;
+  color: rgb(255, 217, 0);
+  text-align: left;
+  margin: 20px;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14ch; /* Adjust based on length of your name */
+  }
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* ========== CUSTOM HEADER ========== */
+.custom-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #2784f0, #334a62);
+  padding: 20px 40px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-left h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
+.header-left .tagline {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #ccc;
+}
+.header-right i {
+  font-size: 24px;
+  color: white;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+.header-right i:hover {
+  transform: scale(1.2);
+  color: #ffd700;
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.header-nav a:hover {
+  color: #ffd700;
+}
+.resume-btn {
+  padding: 6px 14px;
+  background-color: #ffd700;
+  color: #222 !important;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.header-right a {
+  margin-left: 15px;
+}
+.header-right img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+.header-right img:hover {
+  transform: scale(1.2);
+  opacity: 0.85;
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  .custom-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .header-nav {
+    margin-top: 10px;
+    gap: 15px;
+  }
+  .header-right {
+    margin-top: 15px;
+  }
+}
+
+/* ========== PROFILE SECTION ========== */
+.profile-section {
+  text-align: center;
+  background:  linear-gradient(135deg, #53a3ff, #334a62);
+  color: white;
+  padding: 40px 20px;
+}
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+.profile-text h1 {
+  margin: 15px 0 5px;
+  font-size: 2rem;
+}
+.profile-text p {
+  margin: 5px 0;
+}
+
+/* ========== EDUCATION SECTION ========== */
+.education-section {
+  background: #ffffff;
+  padding: 50px 30px;
+}
+.education-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.education-grid.horizontal {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 500px;
+  background-color: #c8dcfa;
+  padding: 20px 30px;
+  border-left: 6px solid #0077cc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.edu-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.edu-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #1e2a38;
+}
+.edu-card p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Dark Mode Support */
+body.dark-mode .edu-card {
+  background-color: #1f1f1f;
+  color: #eaeaea;
+  border-left-color: #ffa500;
+}
+body.dark-mode .edu-logo {
+  background: #333;
+}
+
+/* ========== WORK EXPERIENCE SECTION ========== */
+.work-section {
+  background: #ffffff; /* Light yellow */
+  padding: 50px 30px;
+}
+.work-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.work-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.work-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 500px;
+  background-color: #fffde7;
+  padding: 20px 30px;
+  border-left: 6px solid #ff9800;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.work-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.work-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #1e2a38;
+}
+.work-card p {
+  margin: 3px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+
+
+/* ========== SKILLS SECTION ========== */
+.skills-section {
+  background: #ffffff;
+  padding: 50px 30px;
+}
+.skill-category {
+  margin-bottom: 40px;
+}
+.skill-category h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  transition: transform 0.3s ease;
+}
+.icon-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+.icon-item span {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.icon-item:hover {
+  transform: scale(1.15);
+}
+
+/* ========== CERTIFICATIONS SECTION ========== */
+.icon-section {
+  padding: 30px;
+  background: #fff;
+}
+.icon-grid.certs img {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s ease;
+}
+.icon-grid.certs img:hover {
+  transform: scale(1.15);
+}
+
+/* ========== PROJECTS SECTION ========== */
+.projects-section {
+  padding: 50px 30px;
+  background: #e8f0fe;
+}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.project-card {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-card:hover {
+  transform: scale(1.05);
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.project-card:hover .overlay {
+  transform: translateY(0);
+}
+
+/* ========== MODAL STYLES ========== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+.modal-content {
+  background: #fff;
+  color: #222;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.modal-content img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  color: #555;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+.github-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #24292e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.github-button:hover {
+  background-color: #444c56;
+}
+/* ========== RESEARCH WORKS SECTION ========== */
+.research-section {
+  background: #f9f9f9;
+  padding: 50px 30px;
+}
+.research-section h2 {
+  font-size: 2rem;
+  color: #1e2a38;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.research-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.research-item {
+  max-width: 700px;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-left: 6px solid #0077cc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.research-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #1e2a38;
+}
+.research-item p {
+  font-size: 0.95rem;
+  color: #444;
+}
+.research-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0077cc;
+}
+.research-link:hover {
+  text-decoration: underline;
+}
+
+/* Dark Mode */
+body.dark-mode .research-section {
+  background: #181818;
+}
+body.dark-mode .research-item {
+  background: #222;
+  color: #ddd;
+  border-left-color: #ffa500;
+}
+body.dark-mode .research-link {
+  color: #ffa500;
+}
+/* ========== RESEARCH WORKS SECTION ========== */
+.research-section {
+  background: #f9f9f9;
+  padding: 50px 30px;
+}
+.research-section h2 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.research-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.research-card {
+  width: 500px;
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-left: 6px solid #0077cc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.research-card:hover {
+  transform: translateY(-5px);
+}
+.research-card h3 {
+  font-size: 1.3rem;
+  color: #1e2a38;
+  margin-bottom: 10px;
+}
+.research-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+body.dark-mode .research-section {
+  background-color: #161616;
+}
+body.dark-mode .research-card {
+  background-color: #1f1f1f;
+  color: #eaeaea;
+  border-left-color: #ffa500;
+}
+
+
+/* ========== FOOTER ========== */
+footer {
+  background: #0175fa;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
