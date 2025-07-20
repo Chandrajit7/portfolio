@@ -32,7 +32,9 @@ h2 {
   text-align: left;
   margin: 20px;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 /* Typing animation */
 @keyframes typing {
   from {
@@ -56,10 +58,16 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #2784f0, #334a62);
+  background: linear-gradient(135deg, #2784f0, #1e2a38);
   padding: 20px 40px;
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.custom-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #1e2a38, #334a62);
 }
 
 .header-left h1 {
@@ -140,14 +148,14 @@ h2 {
 /* ========== PROFILE SECTION ========== */
 .profile-section {
   text-align: center;
-  background:  linear-gradient(135deg, #53a3ff, #334a62);
+  background:  linear-gradient(135deg,#2784f0, #1e2a38);
   color: white;
   padding: 40px 20px;
 }
 .profile-pic {
   width: 140px;
   height: 140px;
-  border-radius: 50%;
+  border-radius: 80%;
   object-fit: cover;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
@@ -157,6 +165,9 @@ h2 {
 }
 .profile-text p {
   margin: 5px 0;
+  text-align: center
+  
+  ;
 }
 
 /* ========== EDUCATION SECTION ========== */
@@ -322,7 +333,7 @@ body.dark-mode .edu-logo {
 /* ========== PROJECTS SECTION ========== */
 .projects-section {
   padding: 50px 30px;
-  background: #e8f0fe;
+  background: #ffffff;
 }
 .projects-grid {
   display: flex;
@@ -419,7 +430,7 @@ body.dark-mode .edu-logo {
 }
 /* ========== RESEARCH WORKS SECTION ========== */
 .research-section {
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 50px 30px;
 }
 .research-section h2 {
@@ -461,21 +472,10 @@ body.dark-mode .edu-logo {
   text-decoration: underline;
 }
 
-/* Dark Mode */
-body.dark-mode .research-section {
-  background: #181818;
-}
-body.dark-mode .research-item {
-  background: #222;
-  color: #ddd;
-  border-left-color: #ffa500;
-}
-body.dark-mode .research-link {
-  color: #ffa500;
-}
+
 /* ========== RESEARCH WORKS SECTION ========== */
 .research-section {
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 50px 30px;
 }
 .research-section h2 {
@@ -492,9 +492,9 @@ body.dark-mode .research-link {
 }
 .research-card {
   width: 500px;
-  background-color: #ffffff;
+  background-color: #d5f8eb;
   padding: 25px 30px;
-  border-left: 6px solid #0077cc;
+  border-left: 6px solid #00ffdd;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
@@ -521,12 +521,313 @@ body.dark-mode .research-card {
   border-left-color: #ffa500;
 }
 
+/* ========== CHATBOT ========== */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border: 2px solid #0077cc;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Montserrat', sans-serif;
+  z-index: 10000;
+  overflow: hidden;
+}
+.chat-header {
+  background: #0077cc;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.chat-body {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f4f4f4;
+}
+.chat-input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.chat-input-area input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+.chat-input-area button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.chat-input-area button:hover {
+  background: #005fa3;
+}
+.bot-msg, .user-msg {
+  background: #e0e0e0;
+  padding: 6px 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+}
+.user-msg {
+  background: #d1ecf1;
+  text-align: right;
+}
+body.dark-mode .chatbot-container {
+  background: #222;
+  color: white;
+  border-color: #ffd700;
+}
+body.dark-mode .chat-header {
+  background: #444;
+}
+body.dark-mode .chat-body {
+  background: #333;
+}
+body.dark-mode .chat-input-area input {
+  background: #444;
+  color: white;
+  border-color: #777;
+}
+/* ========== MINIMAL CHAT LAUNCH BUTTON ========== */
+.chatbot-mini {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1100ff;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+}
+.chatbot-mini:hover {
+  background-color: #005fa3;
+}
+
+/* ========== FULL CHAT UI ========== */
+.chatbot-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 350px;
+  background: #fff;
+  border: 2px solid #001aff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Montserrat', sans-serif;
+  z-index: 10000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.chatbot-container.hidden {
+  display: none;
+}
+.chat-header {
+  background: #001aff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close-chat {
+  cursor: pointer;
+  font-size: 20px;
+}
+.chat-body {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f4f4f4;
+}
+.chat-input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+.chat-input-area input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+.chat-input-area button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background: #001aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.chat-input-area button:hover {
+  background: #001aff;
+}
+.bot-msg, .user-msg {
+  background: #e0e0e0;
+  padding: 6px 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+}
+.user-msg {
+  background: #d1ecf1;
+  text-align: right;
+}
 
 /* ========== FOOTER ========== */
 footer {
-  background: #0175fa;
+  background: #000000;
   color: white;
   text-align: center;
   padding: 15px;
   font-size: 0.9rem;
+}
+
+/* ========== DARK MODE BASE ========== */
+body.dark-mode {
+  background-color: #000000;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #ffffff;
+}
+body.dark-mode .custom-header,
+body.dark-mode header
+body.dark-mode .custom-footer
+ {
+  background: #000000;
+  box-shadow: none;
+}
+
+body.dark-mode .profile-section {
+  background: #222;
+}
+
+body.dark-mode .education-section,
+body.dark-mode .work-section,
+body.dark-mode .skills-section,
+body.dark-mode .projects-section,
+body.dark-mode .icon-section,
+body.dark-mode .research-section {
+  background: #1c1c1c;
+  color: #cccccc;
+}
+ody.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p{
+  color: #ffffff;
+}
+body.dark-mode .github-button {
+  background-color: #ffa500;
+  color: #222 !important;
+}
+
+body.dark-mode .project-card .overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3{
+  color: #ffbb00;
+}
+
+body.dark-mode .modal-content {
+  background: #2a2a2a;
+  color: #ddd;
+}
+
+body.dark-mode .edu-card,
+body.dark-mode .work-card,
+body.dark-mode .research-card {
+  background-color: #000000;
+  color: #eaeaea;
+  border-left-color: #ffa500;
+}
+body.dark-mode .edu-logo,
+body.dark-mode .work-logo {
+  background: #333;
+}
+
+body.dark-mode footer {
+  background: #181818;
+}
+
+#darkModeToggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 24px;
+  margin-left: 20px;
+  color: inherit;
+  transition: transform 0.3s;
+}
+#darkModeToggle:hover {
+  transform: scale(1.15);
+}
+/* ==== DARK MODE: CHAT BOX ==== */
+
+/* Main chat container background and text */
+body.dark-mode .chatbot-container {
+  background: #222;
+  color: #e0e0e0;
+  border-color: #ffd700;
+}
+
+/* Chat header */
+body.dark-mode .chat-header {
+  background: #444;
+  color: #fff;
+}
+
+/* Chat body area */
+body.dark-mode .chat-body {
+  background: #333;
+  color: #e0e0e0;
+}
+
+/* Chat input */
+body.dark-mode .chat-input-area input {
+  background: #444;
+  color: #fff;
+  border-color: #777;
+}
+
+body.dark-mode .chat-input-area button {
+  background: #ffd700;
+  color: #222;
+}
+
+body.dark-mode .chat-input-area button:hover {
+  background: #e6c200;
+}
+
+/* Chat messages (user and bot) */
+body.dark-mode .user-msg,
+body.dark-mode .bot-msg {
+  background: #000000;
+  color: #ffd700;
+}
+body.dark-mode .user-msg {
+  background: #1b1b1b;
+  color: #fff;
 }
